@@ -1,0 +1,43 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Net Ninja Vue 3 Crash Course</title>
+		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	</head>
+	<body>
+		<h1>Hello Vue!</h1>
+
+		<div id="app">
+			<h1>Title: {{ title }}</h1>
+			<h3>by {{ author }} who is {{ age }} years old.</h3>
+			<div style="display: flex">
+				<button
+					style="padding: 10px; margin: 5px"
+					@click="age++">
+					Increase Age
+				</button>
+				<button
+					style="padding: 10px; margin: 5px"
+					@click="age--">
+					Decrease Age
+				</button>
+
+				<button
+					style="padding: 10px; margin: 5px"
+					@click="changeBook('Clean Code')">
+					A new book
+				</button>
+
+				<button
+					style="padding: 10px; margin: 5px"
+					@click="age--">
+					Show Books
+				</button>
+			</div>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
