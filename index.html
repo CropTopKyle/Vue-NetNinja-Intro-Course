@@ -6,36 +6,73 @@
 			content="width=device-width, initial-scale=1.0" />
 		<title>Net Ninja Vue 3 Crash Course</title>
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+		<link
+			rel="stylesheet"
+			href="styles.css" />
 	</head>
 	<body>
-		<h1>Hello Vue!</h1>
-
 		<div id="app">
-			<h1>Title: {{ title }}</h1>
-			<h3>by {{ author }} who is {{ age }} years old.</h3>
+			<h1>Hello Vue!</h1>
+			<a :href="url">Google.com</a>
+			<div
+				v-if="showBooks"
+				class="flex-class">
+				<div
+					v-for="book in books"
+					:class="{ fav: book.isFav }">
+					<ul>
+						<li>
+							<h2>{{ book.title }}</h2>
+							<h4>by {{ book.author }}</h4>
+							<img
+								:src="book.cover"
+								:alt="book.alt" />
+						</li>
+						<button
+							class="fav-button"
+							role="button"
+							@click="toggleFavorite">
+							<span v-if="book.isFav">Un-Favorite</span>
+							<span v-else>Favorite</span>
+						</button>
+					</ul>
+				</div>
+			</div>
 			<div style="display: flex">
 				<button
-					style="padding: 10px; margin: 5px"
-					@click="age++">
-					Increase Age
+					class="button-29"
+					role="button"
+					@click="toggleShowBooks">
+					<span v-if="showBooks">Hide Books</span>
+					<span v-else>Show Books</span>
 				</button>
-				<button
-					style="padding: 10px; margin: 5px"
-					@click="age--">
-					Decrease Age
-				</button>
+			</div>
+			<div class="top-space">
+				<span v-show="showBooks">Currently Showing Books</span>
+				<span v-show="!showBooks">Currently Hiding Books</span>
+			</div>
 
-				<button
-					style="padding: 10px; margin: 5px"
-					@click="changeBook('Clean Code')">
-					A new book
-				</button>
+			<br />
 
-				<button
-					style="padding: 10px; margin: 5px"
-					@click="age--">
-					Show Books
-				</button>
+			<div
+				@mouseover="handleHover($event, 5)"
+				class="box">
+				Mouse Over
+			</div>
+			<div
+				@mouseleave="handleLeave"
+				class="box">
+				Mouse Leave
+			</div>
+			<div
+				@dblclick="handleDoubleclick"
+				class="box">
+				Double Click
+			</div>
+			<div
+				@mousemove="handleMouseMove"
+				class="box">
+				Position: {{ x }}, {{ y }}
 			</div>
 		</div>
 		<script src="app.js"></script>

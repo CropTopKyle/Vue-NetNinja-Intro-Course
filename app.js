@@ -2,10 +2,42 @@ const app = Vue.createApp({
 	// Data and functions
 	data() {
 		return {
+			url: 'https://www.google.com',
 			showBooks: true,
-			title: 'The Pragmatic Programmer: From Journeyman to Master',
-			author: 'Andy Hunt',
-			age: '59',
+			showAuthor: true,
+			books: [
+				{
+					title: 'Clean Code',
+					author: 'Robert C. Martin',
+					isFav: true,
+					cover: 'public/cleancode.jpg',
+					alt: 'book cover',
+				},
+				{
+					title: 'The Mythical Man-Month',
+					author: 'Frederick Brooks',
+					isFav: false,
+					cover: 'public/mythicalmanmonth.jpg',
+					alt: 'book cover',
+				},
+				{
+					title: 'The Pragmatic Programmer: Your Journey to Mastery',
+					author: 'Andrew Hunt and David Thomas',
+					isFav: true,
+					cover: 'public/pragmaticprogrammer.jpg',
+					alt: 'book cover',
+				},
+				{
+					title: 'The Art of Computer Programming',
+					author: 'Donald Knuth',
+					isFav: false,
+					cover: 'public/artofcomputerprogramming.jpg',
+					alt: 'book cover',
+				},
+			],
+			x: 0,
+			y: 0,
+			count: 0,
 		};
 	},
 	methods: {
@@ -15,7 +47,31 @@ const app = Vue.createApp({
 			this.age = '72';
 		},
 
-		showBooks() {},
+		toggleShowBooks() {
+			this.showBooks = !this.showBooks;
+		},
+
+		toggleFavorite() {
+			this.books.isFav = !this.books.isFav;
+		},
+
+		handleHover(e, data) {
+			console.log('Hovering!');
+			console.log(e);
+			console.log(`Data: ${data}`);
+		},
+		handleLeave(e) {
+			console.log('Leaving!');
+			console.log(e);
+		},
+		handleDoubleclick(e) {
+			console.log('Twice Clicked!');
+			console.log(e, e.type);
+		},
+		handleMouseMove(e) {
+			this.x = e.offsetX;
+			this.y = e.offsetY;
+		},
 	},
 });
 
