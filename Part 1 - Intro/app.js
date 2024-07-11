@@ -37,7 +37,6 @@ const app = Vue.createApp({
 			],
 			x: 0,
 			y: 0,
-			count: 0,
 		};
 	},
 	methods: {
@@ -51,8 +50,8 @@ const app = Vue.createApp({
 			this.showBooks = !this.showBooks;
 		},
 
-		toggleFavorite() {
-			this.books.isFav = !this.books.isFav;
+		toggleFavorite(book) {
+			book.isFav = !book.isFav;
 		},
 
 		handleHover(e, data) {
@@ -71,6 +70,16 @@ const app = Vue.createApp({
 		handleMouseMove(e) {
 			this.x = e.offsetX;
 			this.y = e.offsetY;
+		},
+	},
+
+	computed: {
+		filteredFavBooks() {
+			return this.books.filter((book) => book.isFav);
+		},
+
+		filteredBooks() {
+			return this.books.filter((book) => !book.isFav);
 		},
 	},
 });

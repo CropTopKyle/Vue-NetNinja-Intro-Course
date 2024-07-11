@@ -8,33 +8,46 @@
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 		<link
 			rel="stylesheet"
-			href="styles.css" />
+			href="/Part 1 - Intro/styles.css" />
 	</head>
 	<body>
 		<div id="app">
 			<h1>Hello Vue!</h1>
 			<a :href="url">Google.com</a>
+			<div>
+				<h1>Favorite Books</h1>
+				<span v-if="filteredFavBooks.length === 0"
+					>Select a Book to add to favorites!</span
+				>
+			</div>
 			<div
 				v-if="showBooks"
 				class="flex-class">
 				<div
-					v-for="book in books"
+					v-for="book in filteredFavBooks"
 					:class="{ fav: book.isFav }">
 					<ul>
-						<li>
+						<li @click="toggleFavorite(book)">
 							<h2>{{ book.title }}</h2>
 							<h4>by {{ book.author }}</h4>
 							<img
 								:src="book.cover"
 								:alt="book.alt" />
 						</li>
-						<button
-							class="fav-button"
-							role="button"
-							@click="toggleFavorite">
-							<span v-if="book.isFav">Un-Favorite</span>
-							<span v-else>Favorite</span>
-						</button>
+					</ul>
+				</div>
+				<h1>Books</h1>
+				<div
+					v-for="book in filteredBooks"
+					:class="{ fav: book.isFav }">
+					<ul>
+						<li @click="toggleFavorite(book)">
+							<h2>{{ book.title }}</h2>
+							<h4>by {{ book.author }}</h4>
+							<img
+								:src="book.cover"
+								:alt="book.alt" />
+						</li>
 					</ul>
 				</div>
 			</div>
