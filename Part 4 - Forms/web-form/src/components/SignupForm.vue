@@ -1,5 +1,7 @@
 <template>
-  <form>
+  <form
+    @submit.prevent="handleSubmit"
+    @keydown.enter.prevent>
     <label for="">Email:</label>
     <input
       type="email"
@@ -10,7 +12,11 @@
       type="password"
       v-model="password"
       required />
-
+    <div
+      class="password-error"
+      v-if="passwordError">
+      {{ passwordError }}
+    </div>
     <label for="">Role</label>
     <select v-model="role">
       <option value="developer">Web Developer</option>
@@ -43,16 +49,11 @@
         v-model="newsletter" />
       <label for="">Sign up for our weekly newsletter</label>
     </div>
+
+    <div class="submit">
+      <button>Create an account</button>
+    </div>
   </form>
-  <p>Email: {{ email }}</p>
-  <p>Password: {{ password }}</p>
-  <p>Role: {{ role }}</p>
-  <p>Skills: {{ skills }}</p>
-  <div>
-    <p v-if="terms">The terms have been accepted!</p>
-    <p v-else>The terms have not been accepted!</p>
-  </div>
-  <p>Newsletter: {{ newsletter }}</p>
 </template>
 
 <script>
@@ -67,6 +68,7 @@
         tempSkill: [],
         skills: [],
         index: '',
+        passwordError: '',
       }
     },
     methods: {
@@ -82,6 +84,13 @@
       handleDelete(skill) {
         this.index = this.skills.indexOf(skill)
         this.skills.splice(this.index, 1)
+      },
+
+      handleSubmit() {
+        console.log('Form Submitted!')
+        // Password Validation
+        this.passwordError =
+          this.password.length > 5 ? '' : 'Password is not long enough!'
       },
     },
   }
@@ -137,5 +146,25 @@
     font-weight: bold;
     color: #777;
     cursor: pointer;
+  }
+
+  button {
+    background: rgb(60, 60, 255);
+    border: 0;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  .submit {
+    text-align: center;
+  }
+
+  .password-error {
+    font-size: 12px;
+    margin-top: 10px;
+    color: red;
   }
 </style>
