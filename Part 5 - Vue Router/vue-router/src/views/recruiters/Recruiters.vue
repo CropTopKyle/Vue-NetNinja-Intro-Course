@@ -20,13 +20,14 @@
   export default {
     data() {
       return {
-        recruiters: [
-          { name: 'Romanos Hanna', experience: 5, id: 1 },
-          { name: 'Paul Annette', experience: 2, id: 2 },
-          { name: 'Augusta Veronika', experience: 8, id: 3 },
-          { name: 'Otto Kristiane', experience: 1, id: 4 },
-        ],
+        recruiters: [],
       }
+    },
+    mounted() {
+      fetch('http://localhost:3000/recruiters')
+        .then((res) => res.json())
+        .then((data) => (this.recruiters = data))
+        .catch((err) => console.log(err.message))
     },
   }
 </script>

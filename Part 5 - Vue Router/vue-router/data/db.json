@@ -1,0 +1,14 @@
+{
+  "jobs": [
+    { "title": "Software Developer", "id": 1, "details": "lorem" },
+    { "title": "Software Designer", "id": 2, "details": "lorem" },
+    { "title": "Software Tester", "id": 3, "details": "lorem" }
+  ],
+
+  "recruiters": [
+    { "name": "Romanos Hanna", "experience": 5, "id": 1 },
+    { "name": "Paul Annette", "experience": 2, "id": 2 },
+    { "name": "Augusta Veronika", "experience": 8, "id": 3 },
+    { "name": "Otto Kristiane", "experience": 1, "id": 4 }
+  ]
+}
