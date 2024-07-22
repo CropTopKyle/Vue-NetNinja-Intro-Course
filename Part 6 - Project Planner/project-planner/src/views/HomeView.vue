@@ -4,7 +4,10 @@
       <div
         v-for="project in projects"
         :key="project.id">
-        <SingleProject :project="project" />
+        <SingleProject
+          :projects="project"
+          @delete="handleDelete"
+          @updateStatus="handleStatusUpdate" />
       </div>
     </div>
   </div>
@@ -16,7 +19,19 @@
   export default {
     name: 'HomeView',
     components: { SingleProject },
-    methods: {},
+    methods: {
+      handleDelete(id) {
+        this.projects = this.projects.filter((project) => {
+          return project.id !== id
+        })
+      },
+      handleStatusUpdate(id) {
+        let p = this.projects.find((project) => {
+          return project.id == id
+        })
+        p.complete = !p.complete
+      },
+    },
     data() {
       return {
         projects: [],
