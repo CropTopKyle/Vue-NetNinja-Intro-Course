@@ -5,7 +5,15 @@
     <div class="actions">
       <h3 @click="handleDetailsToggle">{{ projects.title }}</h3>
       <div class="icons">
-        <span class="material-icons">edit</span>
+        <router-link
+          :to="{
+            name: 'EditProject',
+            params: {
+              id: projects.id,
+            },
+          }">
+          <span class="material-icons">edit</span>
+        </router-link>
         <span
           class="material-icons"
           @click="handleDeleteProject"

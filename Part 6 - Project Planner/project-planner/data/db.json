@@ -1,20 +1,26 @@
 {
   "projects": [
     {
-      "id": "1",
-      "title": "Create new homepage banner",
+      "id": "cf54",
+      "title": "Create a nav bar",
       "details": "lorem ipsum",
       "complete": false
     },
     {
-      "id": "2",
-      "title": "Create new homepage banner",
+      "id": "7a51",
+      "title": "Create a side bar",
       "details": "lorem ipsum",
       "complete": false
     },
     {
-      "id": "3",
-      "title": "Create new homepage banner",
+      "id": "80d1",
+      "title": "Create the page hero - With an update",
+      "details": "This is the new text",
+      "complete": false
+    },
+    {
+      "id": "e651",
+      "title": "Create a home page",
       "details": "lorem ipsum",
       "complete": false
     }

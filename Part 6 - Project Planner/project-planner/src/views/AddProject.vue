@@ -24,7 +24,21 @@
 
     methods: {
       handleSubmit() {
-        console.log(this.title, this.details)
+        let project = {
+          title: this.title,
+          details: this.details,
+          complete: false,
+        }
+
+        fetch('http://localhost:3000/projects', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(project),
+        })
+          .then(() => {
+            this.$router.push('/')
+          })
+          .catch((error) => console.log(error))
       },
     },
   }
@@ -72,5 +86,6 @@
     border: 0;
     border-radius: 6px;
     font-size: 16px;
+    cursor: pointer;
   }
 </style>
