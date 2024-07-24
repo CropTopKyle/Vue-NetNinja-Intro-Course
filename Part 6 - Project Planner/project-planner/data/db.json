@@ -4,7 +4,7 @@
       "id": "cf54",
       "title": "Create a nav bar",
       "details": "lorem ipsum",
-      "complete": false
+      "complete": true
     },
     {
       "id": "7a51",
@@ -14,9 +14,9 @@
     },
     {
       "id": "80d1",
-      "title": "Create the page hero - With an update",
+      "title": "Create the page hero",
       "details": "This is the new text",
-      "complete": false
+      "complete": true
     },
     {
       "id": "e651",

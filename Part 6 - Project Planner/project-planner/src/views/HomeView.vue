@@ -5,7 +5,7 @@
       :filterStatus="filterStatus" />
     <div v-if="projects.length">
       <div
-        v-for="project in projects"
+        v-for="project in filteredProjects"
         :key="project.id">
         <SingleProject
           :projects="project"
@@ -50,9 +50,13 @@
     },
     computed: {
       filteredProjects() {
-        if (this.filteredStatus === 'completed') {
-          return
+        if (this.filterStatus === 'completed') {
+          return this.projects.filter((project) => project.complete)
         }
+        if (this.filterStatus === 'uncompleted') {
+          return this.projects.filter((project) => !project.complete)
+        }
+        return this.projects
       },
     },
   }
