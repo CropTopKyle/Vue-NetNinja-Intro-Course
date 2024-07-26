@@ -1,31 +1,34 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "The Future of Artificial Intelligence",
       "body": "Artificial Intelligence (AI) is rapidly evolving, reshaping industries and our daily lives. From self-driving cars to advanced medical diagnostics, AI is opening up new possibilities we once thought were confined to science fiction. However, with great power comes great responsibility. As we continue to develop AI technologies, we must also consider the ethical implications and ensure that AI is developed and used in ways that benefit humanity as a whole.",
       "tags": ["technology", "AI", "future", "ethics"]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Sustainable Living: Small Changes, Big Impact",
       "body": "In the face of climate change, many people feel overwhelmed and unsure of how they can make a difference. The truth is, small changes in our daily lives can add up to a significant positive impact on the environment. From reducing single-use plastics to choosing energy-efficient appliances, there are numerous ways we can live more sustainably. This post explores practical steps anyone can take to reduce their carbon footprint and contribute to a healthier planet.",
       "tags": ["future", "ethics", "sustainability"]
-    }
-  ],
-
-  "users": [
-    {
-      "id": 1,
-      "username": "CropTopBlogger",
-      "email": "croptop@gmail.com",
-      "active": false
     },
     {
-      "id": 2,
-      "username": "iLovetoBlog2",
-      "email": "bigblogfan2@gmail.com",
-      "active": true
+      "id": "91db",
+      "title": "5 Easy Weeknight Dinners for Busy Families",
+      "body": "Quick recipes for nutritious meals that can be prepared in 30 minutes or less. Includes grocery lists and meal-prep tips to save time during hectic weeknights.",
+      "tags": ["food", "recipes", "health"]
+    },
+    {
+      "id": "d57d",
+      "title": "Minimalism: Decluttering Your Digital Life",
+      "body": "Strategies for organizing your digital spaces, including email management, file storage solutions, and app usage optimization. Focuses on increasing productivity and reducing digital stress.",
+      "tags": ["technology", "health", "tips"]
+    },
+    {
+      "id": "df91",
+      "title": "Urban Gardening: Growing Food in Small Spaces",
+      "body": "Tips for cultivating vegetables, herbs, and small fruit plants on balconies, windowsills, and tiny backyards. Covers container gardening, vertical growing techniques, and space-saving plant varieties.",
+      "tags": ["nature", "gardening", "health"]
     }
   ]
 }
