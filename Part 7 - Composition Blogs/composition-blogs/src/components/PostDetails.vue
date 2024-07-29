@@ -16,13 +16,17 @@
 <script>
   import getSinglePost from '@/composables/getSinglePost'
   import LoadingSpinner from './LoadingSpinner.vue'
+  import { useRoute } from 'vue-router'
 
   export default {
     props: ['id'],
     components: { LoadingSpinner },
     setup(props) {
+      const route = useRoute()
+      console.log(route)
+
       const { singlePost, errorMessage, loadSinglePost } = getSinglePost(
-        props.id
+        route.params.id
       )
 
       loadSinglePost()

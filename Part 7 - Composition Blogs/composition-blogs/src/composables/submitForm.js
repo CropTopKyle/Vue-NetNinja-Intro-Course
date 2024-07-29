@@ -1,7 +1,9 @@
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const submitForm = () => {
   const errorMessage = ref(null)
+  const router = useRouter()
 
   const postFormData = async (formData) => {
     try {
@@ -22,6 +24,7 @@ const submitForm = () => {
       errorMessage.value = err.message
     }
   }
+
   return { errorMessage, postFormData }
 }
 

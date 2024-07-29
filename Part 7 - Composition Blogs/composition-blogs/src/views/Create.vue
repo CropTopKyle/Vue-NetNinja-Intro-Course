@@ -1,10 +1,10 @@
 <template>
-  <h1>Create a new blog!</h1>
   <div v-if="errorMessage">
     <h3>{{ errorMessage }}</h3>
   </div>
   <div class="create">
-    <form @submit="handleSubmit">
+    <form @submit.prevent="handleSubmit">
+      <h2>Create a new blog</h2>
       <label>Title:</label>
       <input
         type="text"
@@ -33,6 +33,7 @@
 <script>
   import { ref } from 'vue'
   import submitForm from '@/composables/submitForm'
+  import { useRouter } from 'vue-router'
 
   export default {
     setup() {
@@ -41,6 +42,7 @@
       const tag = ref('')
       const tags = ref([])
       const { postFormData, errorMessage } = submitForm()
+      const router = useRouter()
 
       const addTag = () => {
         if (!tags.value.includes(tag.value)) {
@@ -59,13 +61,12 @@
 
         try {
           await postFormData(formData)
-          title.value = ''
-          body.value = ''
-          tags.value = ''
+          router.push({ name: 'home' })
         } catch (errorMessage) {
           console.log(errorMessage.value)
         }
       }
+
       return {
         title,
         body,

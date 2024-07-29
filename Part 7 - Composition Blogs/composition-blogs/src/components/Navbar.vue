@@ -1,9 +1,11 @@
 <template>
-  <header><h1>Composition Blog</h1></header>
-  <nav>
-    <router-link :to="{ name: 'home' }">Home</router-link>
-    <router-link :to="{ name: 'create' }">Create</router-link>
-  </nav>
+  <header>
+    <h1>Composition Blog</h1>
+    <nav>
+      <router-link :to="{ name: 'home' }">Home</router-link>
+      <router-link :to="{ name: 'create' }">Create</router-link>
+    </nav>
+  </header>
 </template>
 
 <script>

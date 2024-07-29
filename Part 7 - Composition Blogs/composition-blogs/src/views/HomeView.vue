@@ -11,6 +11,7 @@
     <div v-else>
       <LoadingSpinner />
     </div>
+    <TagCloud />
   </div>
 </template>
 
